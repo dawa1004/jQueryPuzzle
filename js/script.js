@@ -1,8 +1,8 @@
 
 /* The slide images are contained in the slides array. */
-var slides = new Array('img/sample.jpg',
-					   'img/sample2.jpg',
-					   'img/sample3.jpg'
+var slides = new Array('img/sample_thum.jpg',
+					   'img/sample2_thum.jpg',
+					   'img/sample3_thum.jpg'
 );
 
 
