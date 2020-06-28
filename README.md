@@ -21,6 +21,12 @@ http://www.neko-pazzle.site/
 (https://webdesignfacts.net/entry/css-background-animation/)
 
 ## Links
-使用画像
+###使用画像
+猫画像 3枚
 https://unsplash.com/
+
+トランプの画像、その他画像 6枚
 https://www.irasutoya.com/
+
+###ソースコード
+https://github.com/dawa1004/jQueryPuzzle
