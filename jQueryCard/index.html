@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>うさぎのカード占い</title>
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="hero"> 
+    <div class="stage">
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+    </div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <ul id="card">
+      <li><img src="img/card.png"></li>
+      <li><img src="img/card.png"></li>
+      <li><img src="img/card.png"></li>
+      <li><img src="img/card.png"></li>
+      <li><img src="img/card.png"></li>
+    </ul>
+  </div>
+  <script src="js/jquery-3.5.1.min.js"></script></script>
+  <script src="js/background.js"></script>
+  <script src="js/jQueryRotate.js"></script>
+  <script>
+    var r = 150; //カードの軌道の半径
+    var d = 0; //カードを移動させるために変化させる値
+    var kakudo = []; //各カードの最初の位置を格納する配列
+    var timer; //setInterval用
+    var index; //クリックしたカードの番号が入ります
+
+    //カードを回転させる関数
+    function kaiten() {
+      for (i = 1; i <= 5; i++) {
+        //円軌道をさせる
+        var dd = kakudo[i - 1] + d;
+        $("#card li").eq(i - 1).css({
+          left: (r * Math.cos(dd * Math.PI / 180)) + 'px',
+          top: (r * Math.sin(dd * Math.PI / 180)) + 'px'
+        });
+        //カードを回転させる
+        $("#card li").eq(i - 1).rotate(dd * i);
+      }
+      d++;
+    }
+
+    //カードが閉じる
+    function cardClose() {
+      $("#card li:eq(" + index + ")").stop().animate({
+        left: "75"
+      }, 500);
+      $("#card li:eq(" + index + ") img").stop().animate({
+        width: "0",
+        height: "200px"
+      }, 500, cardOpen);
+    }
+    //カードが開く
+    function cardOpen() {
+      $("#card li:eq(" + index + ") img").attr("src", "img/card" + (index + 1) + ".png");
+      $("#card li:eq(" + index + ") img").stop().animate({
+        width: "400px",
+        height: "400px"
+      }, 500);
+      $("#card li:eq(" + index + ")").stop().animate({
+        left: "0"
+      }, 500);
+    }
+
+    $(function() {
+      for (i = 0; i < 5; i++) {
+        kakudo.push(Math.round(Math.random() * 360 + 0.5));
+      }
+      timer = setInterval(function() {
+        kaiten();
+      }, 10);
+
+      $("#card li").click(function() {
+        index = $("#card li").index(this); //選択したカードの順番をindexに保存
+        $("#card li:not(:eq(" + index + "))").animate({
+          opacity: "0"
+        }, 1000); //選択したカード以外の透明度を0に
+        clearInterval(timer); //kaiten()の動きを止める
+        $("#card li:eq(" + index + ")").rotate({
+          animateTo: 0
+        }); //選択したカードの角度を0°まで回す
+        $("#card li:eq(" + index + ")").animate({
+          top: "0",
+          left: "0"
+        }, 1000, cardClose); //選択したカードを一番初めの位置に戻した後cardClose()を実行
+      });
+    });
+  // フェードイン
+  $(function() {
+  $('body').hide().fadeIn(5000);
+  });
+
+  </script>
+</body>
+
+</html>

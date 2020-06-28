@@ -1,0 +1,263 @@
+/* 背景 */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+.hero {
+  background-color: #0040C1;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero__title {
+  color: #fff;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #003298;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+          animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #0051f4;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* タイトル */
+@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
+body {
+  min-height: 450px;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+}
+.stage {
+  height: 300px;
+  width: 500px;
+  margin: auto;
+  position: absolute;
+  top: -500px;
+  right: 0;
+  bottom: 0;
+  left: -1100px;
+  perspective: 9999px;
+  transform-style: preserve-3d;
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
+  animation-fill-mode: forwards;
+  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+}
+
+.layer:after {
+  font: 80px/0.65 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
+  content: 'Rabbit\A    Fortune';
+  white-space: pre;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  color: whitesmoke;
+  letter-spacing: -2px;
+  text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
+}
+
+.layer:nth-child(1):after {
+  transform: translateZ(0px);
+}
+
+.layer:nth-child(2):after {
+  transform: translateZ(-1.5px);
+}
+
+.layer:nth-child(3):after {
+  transform: translateZ(-3px);
+}
+
+.layer:nth-child(4):after {
+  transform: translateZ(-4.5px);
+}
+
+.layer:nth-child(5):after {
+  transform: translateZ(-6px);
+}
+
+.layer:nth-child(6):after {
+  transform: translateZ(-7.5px);
+}
+
+.layer:nth-child(7):after {
+  transform: translateZ(-9px);
+}
+
+.layer:nth-child(8):after {
+  transform: translateZ(-10.5px);
+}
+
+.layer:nth-child(9):after {
+  transform: translateZ(-12px);
+}
+
+.layer:nth-child(10):after {
+  transform: translateZ(-13.5px);
+}
+
+.layer:nth-child(11):after {
+  transform: translateZ(-15px);
+}
+
+.layer:nth-child(12):after {
+  transform: translateZ(-16.5px);
+}
+
+.layer:nth-child(13):after {
+  transform: translateZ(-18px);
+}
+
+.layer:nth-child(14):after {
+  transform: translateZ(-19.5px);
+}
+
+.layer:nth-child(15):after {
+  transform: translateZ(-21px);
+}
+
+.layer:nth-child(16):after {
+  transform: translateZ(-22.5px);
+}
+
+.layer:nth-child(17):after {
+  transform: translateZ(-24px);
+}
+
+.layer:nth-child(18):after {
+  transform: translateZ(-25.5px);
+}
+
+.layer:nth-child(19):after {
+  transform: translateZ(-27px);
+}
+
+.layer:nth-child(20):after {
+  transform: translateZ(-28.5px);
+}
+
+.layer:nth-child(n+10):after {
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.25);
+}
+
+.layer:nth-child(n+11):after {
+  -webkit-text-stroke: 15px dodgerblue;
+  text-shadow: 6px 0 6px #00366b, 5px 5px 5px #002951, 0 6px 6px #00366b;
+}
+
+.layer:nth-child(n+12):after {
+  -webkit-text-stroke: 15px #0077ea;
+}
+
+.layer:last-child:after {
+  -webkit-text-stroke: 17px rgba(0, 0, 0, 0.1);
+}
+
+.layer:first-child:after {
+  color: #fff;
+  text-shadow: none;
+}
+
+@keyframes ಠ_ಠ {
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
+  }
+}
+
+
+/* カード */
+#card {
+  margin: 200px auto 0;
+  width: 150px;
+  height: 200px;
+  position: relative;
+  list-style: none;
+}
+#card li {
+  position: absolute;
+}
+

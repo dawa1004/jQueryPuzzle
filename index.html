@@ -1,37 +1,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQueryPazzle</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ねこパズル</title>
 
-<link rel="stylesheet" href="css/main.css">
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <!-- ローディングアニメーション -->
+  <script src="js/loading.js"></script>
+  <link rel="stylesheet" href="css/loading-main.css">
 </head>
 
 <body>
+  <div class="wrapper">
+  <h1><i class="fas fa-cat"></i> ねこパズル</h1>
+  <p class="sub-game"><a href="jQueryCard/index.html" target="_blank"><i class="fas fa-angle-double-right"></i>うさぎのカードうらない</a></p>
 
-<h1>ねこパズル</h1>
-<p><a href=""></a></p>
+  <div id="main">
 
-<div id="main">
-
-	<div id="mosaic-slideshow">
-        <div class="arrow left"></div>
-        <div class="arrow right"></div>
+    <div id="mosaic-slideshow">
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
     </div>
-    <h2>難易度を選んでください<i class="fas fa-arrow-circle-down"></i></h2>
-</div>
+    <p class="up-dawn"><i class="fas fa-arrow-circle-down"></i></p>
+  </div>
 
-<div class="credit">
-    <a href="level1.html">やさしい /</a>
-    <a href="level2.html">ふつう /</a>
-    <a href="level3.html">むずかしい</a>
-</div>
-
-</body>
-</html>
+  <div class="credit">
+    <a href="level1.html" target="_blank">やさしい</a>
+    <div class="wrap">
+      <span class="rate rate1-5"></span>
+    </div>
+    <a href="level2.html" target="_blank">ふつう</a>
+    <div class="wrap">
+      <span class="rate rate3-5"></span>
+    </div>
+    <a href="level3.html" target="_blank">むずかしい</a>
+    <div class="wrap">
+      <span class="rate rate5"></span>
+    </div>
+  </div>
+  </div>
+  <script>
+  $(function() {
+    $('.wrapper').hide().fadeIn(4000);
+  });
+  </script>
+</body></html>

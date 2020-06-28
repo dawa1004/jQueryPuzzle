@@ -2,78 +2,92 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>PuzzleLevel2</title>
+  <title>ねこパズル　難易度:ふつう</title>
   <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-  <link rel="stylesheet" href="css/jquery.jqpuzzle.css"/>
+  <link rel="stylesheet" href="css/jquery.jqpuzzle.css" />
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="js/jquery.jqpuzzle.packed.js"></script>
   <script src="js/jquery.jqpuzzle.min.js"></script>
+  <!-- ローディングアニメーション -->
+  <script src="js/loading.js"></script>
+  <link rel="stylesheet" href="css/loading.css">
 </head>
 <script>
-'use strict';
+  'use strict';
 
-$(function(){
-  $('#main').hide().fadeIn(3000);
-});
+  $(function() {
+    $('#main').hide().fadeIn(4000);
+  });
 
-let settings = {
-  rows: 4,
-  cols: 4,
-  hole: 16,
-  shuffle: true,
-  numbers: true,
-  language: 'ja',
-  control: {
-    shufflePieces: true,
-    confirmShuffle: true,
-    toggleOriginal: true,
-    toggleNumbers: true,
-    counter: true,
-    timer: true,
-    pauseTimer: true
-  },
-  success: {
-    fadeOriginal: false,
-    callback: undefined,
-    callbackTimeout: 300
-  },
-  animation: {
-    shuffleRounds: 3,
-    shuffleSpeed: 800,
-    slidingSpeed: 200,
-    fadeOriginalSpeed: 600
-  },
-  style: {
-    gridSize: 2,
-    overlap: true,
-    backgroundOpacity: 0.1
-  }
-};
-let texts = {
-  shuffleLabel: 'シャッフル',
-  toggleOriginalLabel: '元画像',
-  toggleNumbersLabel: '数値表示／非表示',
-  confirmShuffleMessage: 'シャッフルしてよろしいですか？',
-  movesLabel: '動かした回数',
-  secondsLabel: '秒経過'
-};
+  let settings = {
+    rows: 4,
+    cols: 4,
+    hole: 16,
+    shuffle: true,
+    numbers: true,
+    language: 'ja',
+    control: {
+      shufflePieces: true,
+      confirmShuffle: true,
+      toggleOriginal: true,
+      toggleNumbers: true,
+      counter: true,
+      timer: true,
+      pauseTimer: true
+    },
+    success: {
+      fadeOriginal: false,
+      callback: undefined,
+      callbackTimeout: 300
+    },
+    animation: {
+      shuffleRounds: 3,
+      shuffleSpeed: 800,
+      slidingSpeed: 200,
+      fadeOriginalSpeed: 600
+    },
+    style: {
+      gridSize: 2,
+      overlap: true,
+      backgroundOpacity: 0.1
+    }
+  };
+  let texts = {
+    shuffleLabel: 'シャッフル',
+    toggleOriginalLabel: '元画像',
+    toggleNumbersLabel: '数値表示／非表示',
+    confirmShuffleMessage: 'シャッフルしてよろしいですか？',
+    movesLabel: '動かした回数',
+    secondsLabel: '秒経過'
+  };
 
-$(function(){
-  let t = $('img.jqPuzzle');
-  t.jqPuzzle( settings, texts );
-});
+  $(function() {
+    let t = $('img.jqPuzzle');
+    t.jqPuzzle(settings, texts);
+  });
 </script>
+
 <body>
   <div id="wrapper">
     <div id="main">
-      <h1>難易度:ふつう</h1>
-  
+      <h1>難易度:ふつう
+        <div class="wrap">
+          <span class="rate rate3-5"></span>
+        </div>
+      </h1>
       <div class="container">
         <img class="jqPuzzle" src="img/sample2.jpg" width="980" height="653" alt="">
       </div>
-  
+      <p class="url">
+        http://www.neko-pazzle.site/
+        </p>
     </div>
   </div>
-  
+
 </body>
-</html>
+<style>
+  body {
+    margin-top: -100px;
+  }
+</style></html>

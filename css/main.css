@@ -1,130 +1,365 @@
-*{
-	margin:0;
-	padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-	/* Setting default text color, background and a font stack */
-	font-size:0.825em;
-	color:#444444;
-	background:url("../img/bg.png") repeat-x #fff;
-	font-family:Arial, Helvetica, sans-serif;
+/*背景*/
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
 }
 
-
-#mosaic-slideshow{
-	/* The slideshow container div */
-	height:500px;
-	margin:0 auto;
-	position:relative;
-	width:670px;
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
 }
 
-.mosaic-slide{
-	/* This class is shared between all the slides */
-	left:80px;
-	position:absolute;
-	top:25px;
-	
-	border:10px solid #555;
-	
-	/* CSS3 rounded corners */
-	-moz-border-radius:20px;
-	-webkit-border-radius:20px;
-	border-radius:20px;
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
 }
 
-.tile{
-	/* The individual tiles */
-	height:60px;
-	width:60px;
-	float:left;
-	border:1px solid #555;
-	border-width:0 1px 1px 0;
-	background-color:#555;
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
 }
 
-.arrow{
-	/* The prev/next arrows */
-	width:35px;
-	height:70px;
-	background:url("../img/arrows.png") no-repeat;
-	position:absolute;
-	cursor:pointer;
-	top:50%;
-	margin-top:-35px;
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
 }
 
-.arrow.left{
-	left:15px;
-	background-position:center top;
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
 }
 
-.arrow.left:hover{
-	background-position:center -70px;
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
 }
 
-.arrow.right{
-	right:15px;
-	background-position:center -140px;
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
 }
 
-.arrow.right:hover{
-	background-position:center -210px;
+/* Main styles */
+body {
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse .92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse .92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse .92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse .92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
-.clear{
-	/* This class clears the floats */
-	clear:both;
+/*背景ここまで*/
+
+.jqPuzzle {
+  width: 780px !important;
+  margin: 0 auto;
+}
+
+/*スライドショー*/
+#mosaic-slideshow {
+  /* The slideshow container div */
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  width: 670px;
+}
+
+.mosaic-slide {
+  /* This class is shared between all the slides */
+  left: 80px;
+  position: absolute;
+  top: 25px;
+
+  border: 10px solid #555;
+
+  /* CSS3 rounded corners */
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.tile {
+  /* The individual tiles */
+  height: 60px;
+  width: 60px;
+  float: left;
+  border: 1px solid #555;
+  border-width: 0 1px 1px 0;
+  background-color: #555;
+}
+
+.arrow {
+  /* The prev/next arrows */
+  width: 35px;
+  height: 70px;
+  background: url("../img/arrows.png") no-repeat;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  margin-top: -35px;
+}
+
+.arrow.left {
+  left: 15px;
+  background-position: center top;
+}
+
+.arrow.left:hover {
+  background-position: center -70px;
+}
+
+.arrow.right {
+  right: 15px;
+  background-position: center -140px;
+}
+
+.arrow.right:hover {
+  background-position: center -210px;
+}
+
+.clear {
+  /* This class clears the floats */
+  clear: both;
 }
 
 
 /* The styles below are only necessary for the styling of the demo page: */
 
-#main{
-	position:relative;
-	margin:0 auto;
-	width:960px;
+#main {
+  position: relative;
+  margin: 0 auto;
+  width: 960px;
 }
 
-h1{
-	padding:30px 0;
-	text-align:center;
-	text-shadow:0 1px 1px white;
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+/* 上下に動く */
+
+.up-dawn {
+  animation: text-shadow 1.5s ease-in-out infinite;
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: 1;
+  padding-bottom: .3em;
 }
 
-a, a:visited {
-	color:#0196e3;
-	text-decoration:none;
-	outline:none;
+.up-dawn:hover {
+  animation-play-state: paused;
 }
 
-a:hover{
-	text-decoration:underline;
+a {
+  color: #024794;
 }
 
-a img{
-	border:none;
+a:hover {
+  text-decoration: none;
+}
+
+@keyframes text-shadow {
+  0% {  
+      transform: translateY(0);
+      text-shadow: 
+          0 0 0 #0c2ffb, 
+          0 0 0 #2cfcfd, 
+          0 0 0 #fb203b, 
+          0 0 0 #fefc4b;
+  }
+
+  20% {  
+      transform: translateY(-1em);
+      text-shadow: 
+          0 0.125em 0 #0c2ffb, 
+          0 0.25em 0 #2cfcfd, 
+          0 -0.125em 0 #fb203b, 
+          0 -0.25em 0 #fefc4b;
+  }
+
+  40% {  
+      transform: translateY(0.5em);
+      text-shadow: 
+          0 -0.0625em 0 #0c2ffb, 
+          0 -0.125em 0 #2cfcfd, 
+          0 0.0625em 0 #fb203b, 
+          0 0.125em 0 #fefc4b;
+  }
+  
+ 60% {
+      transform: translateY(-0.25em);
+      text-shadow: 
+          0 0.03125em 0 #0c2ffb, 
+          0 0.0625em 0 #2cfcfd, 
+          0 -0.03125em 0 #fb203b, 
+          0 -0.0625em 0 #fefc4b;
+  }
+
+  80% {  
+      transform: translateY(0);
+      text-shadow: 
+          0 0 0 #0c2ffb, 
+          0 0 0 #2cfcfd, 
+          0 0 0 #fb203b, 
+          0 0 0 #fefc4b;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+a,
+a:visited {
+  color: #0196e3;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
 }
 
 
-h1,h2{
-	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+h1,
+h2 {
+  font-family: "Nikukyu";
+  font-size: 2.5em;
 }
 
-h2{
-	text-align:center;
-	margin:0 0 30px;
+#main h1 {
+  text-align: center;
 }
 
-.credit{
-	text-align:center;
-	margin-bottom:25px;
+h2 {
+  text-align: center;
+  margin: 0 0 30px;
 }
 
-.credit a{
-	font-size:32px;
-	color:#999;
-	margin-left:10px;
-
+.sub-game a {
+  font-family: "Nico Moji";
+  font-size: 1.2em;
+  color: #999;
 }
+
+.credit {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "Nico Moji";
+  font-size: 1.2em;
+}
+
+.credit a {
+  font-size: 20px;
+  color: #999;
+  margin-left: 10px;
+}
+
+/*難易度（レーティング）*/
+.rate {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 16px;
+  font-size: 16px;
+}
+
+.rate:before,
+.rate:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+}
+
+.rate:before {
+  color: #ddd;
+}
+
+.rate:after {
+  color: #ffa500;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rate0:after {
+  width: 0;
+}
+
+.rate1:after {
+  width: 16px;
+}
+
+.rate1-5:after {
+  width: 24px;
+}
+
+.rate2:after {
+  width: 32px;
+}
+
+.rate2-5:after {
+  width: 40px;
+}
+
+.rate3:after {
+  width: 48px;
+}
+
+.rate3-5:after {
+  width: 56px;
+}
+
+.rate4:after {
+  width: 64px;
+}
+
+.rate4-5:after {
+  width: 72px;
+}
+
+.rate5:after {
+  width: 80px;
+}
+
+.wrap {
+  width: 80px;
+  margin: 0 auto;
+}
+
